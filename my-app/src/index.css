@@ -1,0 +1,12 @@
+html{
+    font-family: 'Overpass', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size:15px;
+    background:hsl(216, 12%, 8%);
+}
+body {
+  margin: 0;
+  padding:0;
+}
+

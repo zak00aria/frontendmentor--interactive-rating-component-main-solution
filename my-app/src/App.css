@@ -1,0 +1,30 @@
+.state-card{
+    box-sizing:border-box;
+    padding: 30px 30px;
+    width:420px;
+    background-color: hsl(213, 19%, 18%);
+    border-radius:30px;
+}
+.state-card p{
+    color:hsl(217, 12%, 63%);
+}
+#rating-state{
+    text-align:left;
+}
+#btn-submit{
+    background-color:hsl(25, 97%, 53%);
+    color:hsl(0,0%,100%);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding:.7em;
+    font-size:1.15rem;
+    font-weight:700;
+    text-transform: uppercase;
+    letter-spacing: .2ch;
+    border-radius:2em;
+}
+#thank-you-state{
+    text-align:center;
+    display:none;
+}
