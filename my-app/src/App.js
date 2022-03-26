@@ -10,13 +10,14 @@ function App() {
         <>
             {/* Rating state start */}
             <div id="rating-state" className="state-card">
-                <img src={icon_star} />
-
-                <h2>How did we do?</h2>
-
-                <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-
+                <div style={{ backgroundImage: `url(${icon_star})` }} id="icon-star"></div>
                 <div>
+                    <h2>How did we do?</h2>
+
+                    <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+                </div>
+
+                <div id="rating-bar">
                     {
                         ratingValues.map((v, i) => {
                             return <div className={rating === v ? "active" : ""} key={i}>{v}</div>

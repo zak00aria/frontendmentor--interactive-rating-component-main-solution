@@ -1,17 +1,68 @@
+main{
+    height:800px;
+    width:1440px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 .state-card{
     box-sizing:border-box;
-    padding: 30px 30px;
-    width:420px;
+    padding: 38px 38px 34px 30px;
+    width:408px;
     background-color: hsl(213, 19%, 18%);
-    border-radius:30px;
+    border-radius:32px;
+}
+.state-card h2{
+    color:hsl(0, 0%, 100%);
+    font-size: 1.8rem;
+    font-weight:700;
+    margin: 0;
+    word-spacing: 0.07ch;
 }
 .state-card p{
-    color:hsl(217, 12%, 63%);
+    color:hsl(216, 12%, 54%);
+    line-height: 1.6;
+    margin:10px 0 0;
 }
 #rating-state{
     text-align:left;
 }
-#btn-submit{
+#rating-state > *{
+    margin:32px 0;
+}
+#rating-state > *:first-child{
+    margin-top:0;
+}
+#rating-state > *:last-child{
+    margin-bottom:0;
+}
+#rating-state #icon-star{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background-color:hsla(217, 12%, 63%, .2);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
+}
+#rating-state #rating-bar{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+#rating-state #rating-bar > div{
+    width:50px;
+    height:50px;
+    background-color:hsla(217, 12%, 63%, .2);
+    color:hsl(216, 12%, 54%);
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#rating-state #btn-submit{
     background-color:hsl(25, 97%, 53%);
     color:hsl(0,0%,100%);
     display:flex;
@@ -21,7 +72,7 @@
     font-size:1.15rem;
     font-weight:700;
     text-transform: uppercase;
-    letter-spacing: .2ch;
+    letter-spacing: .12ch;
     border-radius:2em;
 }
 #thank-you-state{
