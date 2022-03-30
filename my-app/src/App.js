@@ -11,7 +11,8 @@ function App() {
         setRating(v);
     }
     function handleSubmitClick() {
-        setIsSubmited(true);
+        if (rating !== '0')
+            setIsSubmited(true);
     }
     return (
         <>
