@@ -5,11 +5,18 @@ import './App.css';
 
 function App() {
     let ratingValues = [1, 2, 3, 4, 5];
-    let { rating, setRating } = useState('0');
+    let [rating, setRating] = useState('0');
+    let [isSubmited, setIsSubmited] = useState(false);
+    function handleClick(v) {
+        setRating(v);
+    }
+    function handleSubmitClick() {
+        setIsSubmited(true);
+    }
     return (
         <>
             {/* Rating state start */}
-            <div id="rating-state" className="state-card">
+            <div id="rating-state" className={`state-card${isSubmited ? " hidden" : ""}`}>
                 <div style={{ backgroundImage: `url(${icon_star})` }} id="icon-star"></div>
                 <div>
                     <h2>How did we do?</h2>
@@ -20,23 +27,23 @@ function App() {
                 <div id="rating-bar">
                     {
                         ratingValues.map((v, i) => {
-                            return <div className={rating === v ? "active" : ""} key={i}>{v}</div>
+                            return <div onClick={() => { handleClick(v) }} className={rating === v ? "active" : ""} key={i}>{v}</div>
                         })
                     }
                 </div>
 
-                <div id="btn-submit">Submit</div>
+                <div id="btn-submit" onClick={() => { handleSubmitClick() }}>Submit</div>
 
             </div>
             {/* Rating state end */}
 
             {/* Thank you state start */}
 
-            <div id="thank-you-state" className="state-card">
-                <img src={illustration_thank_you} />
+            <div id="thank-you-state" className={`state-card${isSubmited ? "" : " hidden"}`}>
+                <img src={illustration_thank_you} alt="" id="illustration-thank-you" />
 
-                <p>
-                    You selected&nbsp;<span>{rating}</span>&nbsp;out of 5
+                <p id="rating">
+                    You selected&nbsp;{rating}&nbsp;out of 5
                 </p>
 
                 <h2>Thank you!</h2>

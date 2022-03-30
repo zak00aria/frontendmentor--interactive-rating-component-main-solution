@@ -1,16 +1,18 @@
 main{
-    height:800px;
-    width:1440px;
+    box-sizing: border-box;
+    min-height:100vh;
     display:flex;
     justify-content: center;
     align-items: center;
 }
 .state-card{
     box-sizing:border-box;
-    padding: 38px 38px 34px 30px;
-    width:408px;
+    padding: 38px 28px 34px 20px;
+    width:calc(100% - 40px);
     background-color: hsl(213, 19%, 18%);
     border-radius:32px;
+    display:block;
+    margin:0 auto;
 }
 .state-card h2{
     color:hsl(0, 0%, 100%);
@@ -23,6 +25,7 @@ main{
     color:hsl(216, 12%, 54%);
     line-height: 1.6;
     margin:10px 0 0;
+    font-size:1rem;
 }
 #rating-state{
     text-align:left;
@@ -53,14 +56,25 @@ main{
     justify-content: space-between;
 }
 #rating-state #rating-bar > div{
-    width:50px;
-    height:50px;
+    width:42px;
+    height:42px;
     background-color:hsla(217, 12%, 63%, .2);
     color:hsl(216, 12%, 54%);
     border-radius: 50%;
     display:flex;
     justify-content: center;
     align-items: center;
+    font-size:1rem;
+    font-weight: 700;
+    cursor:pointer;
+}
+#rating-state #rating-bar > div.active{
+    background-color:hsla(217, 12%, 63%, 1);
+    color:hsl(0, 0%, 100%);
+}
+#rating-state #rating-bar > div:hover{
+    background-color:hsl(25, 97%, 53%);
+    color:hsl(0,0%,100%);
 }
 #rating-state #btn-submit{
     background-color:hsl(25, 97%, 53%);
@@ -74,8 +88,49 @@ main{
     text-transform: uppercase;
     letter-spacing: .12ch;
     border-radius:2em;
+    cursor:pointer;
+    transition:.4s;
+}
+#rating-state #btn-submit:hover{
+    transition:.4s;
+    background-color:hsl(0,0%,100%);
+    color:hsl(25, 97%, 53%);
+}
+#rating-state #btn-submit:active{
+    transition:0s;
+    transform:scale(1.05);
+    background-color:hsl(25, 97%, 53%);
+    color:hsl(0,0%,100%);
 }
 #thank-you-state{
     text-align:center;
+    padding-bottom:57px;
+    padding-top:42px;
+}
+#thank-you-state p#rating{
+    color:hsl(25, 97%, 53%);
+    font-size:1rem;
+    display:inline-block;
+    background:hsla(217, 12%, 63%, .2);
+    margin:30px 0 42px;
+    padding:.6em .8em;
+    line-height: 1;
+    border-radius: 1.2em;
+}
+#illustration-thank-you{
+    display: block;
+    margin:0 auto;
+}
+.state-card.hidden{
     display:none;
+}
+@media (min-width:480px){
+    .state-card{
+        padding: 38px 38px 34px 30px;
+        width:408px;
+    }
+    #rating-state #rating-bar > div{
+        width:50px;
+        height:50px;
+    }
 }
